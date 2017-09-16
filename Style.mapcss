@@ -405,8 +405,8 @@ area|z15-[building=construction]
 
 line|z5-[highway=motorway] {
 //							5	6	7	8	9	10	11	12	13	14	15
-	width: eval( zlinear(5,	1px,1pt,1pt,2pt,2pt,1pt,1pt,1pt,2pt,2pt,max(5pt, metric(any(tag(lanes),3)*2)) ));
-	color: #e85;
+	width: eval( zlinear(5,	2px,2pt,2pt,2pt,2pt,1pt,1pt,1pt,2pt,2pt,max(5pt, metric(any(tag(lanes),3)*2)) ));
+	color: #f00;
 	z-index: 5;
 
 	linecap: round;
@@ -414,12 +414,12 @@ line|z5-[highway=motorway] {
 line|z10-[highway=motorway_link] {
 //												10	11	12	13	14	15	
 	width: eval( zlinear(	10,					0pt	0pt,0pt,1pt,1pt,max(4pt, metric(any(tag(lanes),2)*2)) ));
-	color: #e85;
+	color: #f00;
 	z-index: -1;
 }
 line|z10-[highway=motorway],
 line|z10-[highway=motorway_link] {
-	color: #F96;
+	color: #F00;
 
 	casing-color: #e85;
 	casing-width: 1pt;
@@ -427,8 +427,8 @@ line|z10-[highway=motorway_link] {
 
 line|z6-[highway=trunk] {
 //								6	7	8	9	10	11	12	13	14	15
-	width: eval( zlinear(6,		1px,1pt,2pt,2pt,1pt,1pt,1pt,2pt,2pt,max(5pt, metric(any(tag(lanes),3)*2)) ));
-	color: #E96;
+	width: eval( zlinear(6,		2px,2pt,2pt,2pt,1pt,1pt,1pt,2pt,2pt,max(5pt, metric(any(tag(lanes),3)*2)) ));
+	color: #FFA500;
 	z-index: 4;
 	
 	linecap: round;	
@@ -436,15 +436,15 @@ line|z6-[highway=trunk] {
 line|z10-[highway=trunk_link] {
 //														12	13	14	15	
 	width: eval( zlinear(	12,							0pt,1pt,1pt,max(4pt, metric(any(tag(lanes),2)*2)) ));
-	color: #E96;
+	color: #FFA500;
 
 	z-index: -2;
 }
 line|z10-[highway=trunk],
 line|z10-[highway=trunk_link] {
-	color: #FA7;
+	color: #FFA500;
 
-	casing-color: #E96;
+	casing-color: #f00;
 	casing-width: 1pt;
 }
 
@@ -452,7 +452,7 @@ line|z10-[highway=trunk_link] {
 line|z8-[highway=primary] {
 //								 		8	9	10	11	12	13	14	15	
 	width: eval( zlinear(	8,			1pt,1pt,2pt,2pt,2pt,1pt,1pt,max(4pt, metric(any(tag(lanes),2)*2)) ));
-	color: #EA7;
+	color: #FFA500;
 	z-index: 3;
 
 	linecap: round;	
@@ -460,13 +460,13 @@ line|z8-[highway=primary] {
 line|z11-[highway=primary_link] {
 //													11	12	13	14	15	
 	width: eval( zlinear(	11,						1pt,2pt,0pt,0pt,max(3pt, metric(any(tag(lanes),2)*2)) ));
-	color: #EA7;
+	color: #FFA500;
 
 	z-index: -3;
 }
 line|z13-[highway=primary],
 line|z13-[highway=primary_link] {
-	color: #FB8;
+	color: #FFA500;
 
 	casing-color: #EA7;
 	casing-width: 1pt;
@@ -476,7 +476,7 @@ line|z10-[highway=secondary],
 line|z10-[highway=raceway] {
 //                                                  11	12	13	14	15
 	width: eval( zlinear(	11,                     1.3pt,2pt,2pt,2pt,max(3pt, metric(any(tag(lanes),2)*2)) ));
-	color: #EB8;
+	color: #ff0;
 	z-index: 2;
 
 	linecap: round;	
@@ -484,14 +484,14 @@ line|z10-[highway=raceway] {
 line|z11-[highway=secondary_link] {
 //													11	12	13	14	15	
 	width: eval( zlinear(	11,						1pt,2pt,2pt,2pt,max(3pt, metric(any(tag(lanes),2)*2)) ));
-	color: #EB8;
+	color: #ff0;
 
 	z-index: -4;
 }
 line|z14-[highway=secondary],
 line|z14-[highway=secondary_link],
 line|z14-[highway=raceway] {
-	color: #FC9;
+	color: #ff0;
 
 	casing-color: #EB8;
 	casing-width: 1pt;
@@ -993,6 +993,17 @@ area|z5-8[boundary=administrative][admin_level=3]
     font-stroke-color:#FFFFFFEE;
 
     text-priority: 8;
+}
+
+node|z6-[place=city][population>1000000],
+{
+    text: eval(locTag('name'));
+    text-color:black;
+    font-size:18;
+    font-stroke-color:#FFFFFFEE;
+    font-stroke-width:1pt;
+
+	text-priority: 8;
 }
 
 node|z6-[place=city][population>250000],
