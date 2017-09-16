@@ -995,21 +995,12 @@ area|z5-8[boundary=administrative][admin_level=3]
     text-priority: 8;
 }
 
-node|z6-[place=city][population>1000000],
-{
-    text: eval(locTag('name'));
-    text-color:black;
-    font-size:18;
-    font-stroke-color:#FFFFFFEE;
-    font-stroke-width:1pt;
-
-	text-priority: 8;
-}
-
 node|z6-[place=city][population>250000],
 node|z7-[place=city][population>100000],
 node|z8-[place=city][population>50000],
-node|z9-[place=city]
+node|z9-[place=city][population>20000],
+node|z10-[place=city][population>10000],
+node|z11-[place=city]
 {
     text: eval(locTag('name'));
     text-color:#21211F;
@@ -1018,6 +1009,17 @@ node|z9-[place=city]
     font-stroke-width:1pt;
 
 	text-priority: 7;
+}
+
+node|z6-[place=city][population>500000],
+{
+    text: eval(locTag('name'));
+    text-color:black;
+    font-size:14;
+    font-stroke-color:#FFFFFFEE;
+    font-stroke-width:1pt;
+
+	text-priority: 8;
 }
 
 node|z9-[place=town],
